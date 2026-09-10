@@ -70,7 +70,7 @@ GitHub im Reiter **Actions**.
 
 **Settings → Pages**: Source `Deploy from a branch`, Branch `main`, Ordner
 `/docs`. Das Repository heisst `michaelveikkoseiler.github.io` und ist
-öventlich — beides Voraussetzung: Nur ein so benanntes Repository wird auf der
+öffentlich — beides Voraussetzung: Nur ein so benanntes Repository wird auf der
 obersten Ebene ausgeliefert (sonst lägen alle Pfade eine Ebene daneben), und
 GitHub Pages ist bei privaten Repositories kostenpflichtig.
 
