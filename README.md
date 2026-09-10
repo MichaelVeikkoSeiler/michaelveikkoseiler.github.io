@@ -1,5 +1,7 @@
 # bildstudio.ch — statischer Nachbau
 
+**Live: https://michaelveikkoseiler.github.io**
+
 Die bisherige WordPress-Seite (Theme «Bauman») als statische Website. Kein PHP,
 keine Datenbank, kein WordPress — nur HTML, CSS, JS und Bilder. Damit läuft die
 Seite gratis auf GitHub Pages und braucht keinen bezahlten Anbieter mehr.
@@ -64,11 +66,13 @@ git push
 Nach ein bis zwei Minuten ist die neue Fassung im Netz. Den Fortschritt zeigt
 GitHub im Reiter **Actions**.
 
-### Einmalige Einrichtung
+### Einrichtung (erledigt)
 
-Unter **Settings → Pages**: Source `Deploy from a branch`, Branch `main`,
-Ordner `/docs`. Das Repository muss dafür öffentlich sein — GitHub Pages ist bei
-privaten Repositories kostenpflichtig.
+**Settings → Pages**: Source `Deploy from a branch`, Branch `main`, Ordner
+`/docs`. Das Repository heisst `michaelveikkoseiler.github.io` und ist
+öventlich — beides Voraussetzung: Nur ein so benanntes Repository wird auf der
+obersten Ebene ausgeliefert (sonst lägen alle Pfade eine Ebene daneben), und
+GitHub Pages ist bei privaten Repositories kostenpflichtig.
 
 ### Eigene Domain
 
