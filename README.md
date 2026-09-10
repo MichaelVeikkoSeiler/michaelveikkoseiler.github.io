@@ -102,8 +102,9 @@ GitHub selbst aus.
 * **Abweichungen zur alten Seite (bewusst):** Mailadresse überall auf
   `veikko@gmx.ch` gesetzt (die alte Seite verlinkte `info@bildstudio.ch`, zeigte
   aber `veikko@gmx.ch` an), Copyright auf 2026 aktualisiert.
-* **Tippfehler auf `/portrait/`** (stammen aus der alten Seite, unverändert
-  übernommen): «Parter» statt «Partner», «Anfangs 2019» statt «Anfang 2019».
+* **Tippfehler auf `/portrait/` korrigiert** (standen so auf der alten Seite):
+  «Parter» → «Partner», «Anfangs 2019» → «Anfang 2019». `difftext.py` meldet
+  diese Stellen deshalb als Abweichung — das ist gewollt.
 * **Cookie-Banner:** Ist übernommen, obwohl die Seite gar kein Tracking
   einsetzt (kein Google Analytics, keine Pixel). Er könnte ersatzlos entfallen.
 * **Ladezeit:** Der Preloader wartet, bis alle Kopfbilder geladen sind — das
