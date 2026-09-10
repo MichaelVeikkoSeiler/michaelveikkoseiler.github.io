@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Spiegelt www.bildstudio.ch als statische Website nach ../site/.
+Spiegelt www.bildstudio.ch als statische Website nach ../docs/.
 
 Vorgehen:
   1. Seiten entdecken (Sitemaps + Links im HTML), BFS auf gleicher Domain.
@@ -27,7 +27,7 @@ import urllib.error
 
 BASE_HOST = "www.bildstudio.ch"
 BASE = "https://" + BASE_HOST
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "site")
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs")
 OUT = os.path.abspath(OUT)
 
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "

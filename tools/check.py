@@ -12,7 +12,7 @@ import urllib.parse
 from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SITE = os.path.abspath(os.path.join(HERE, "..", "site"))
+SITE = os.path.abspath(os.path.join(HERE, "..", "docs"))
 
 ATTR_RE = re.compile(
     r"""(?:href|src|data-src|data-original|data-bg|poster|data-thumb)\s*=\s*["']([^"']+)["']""", re.I)

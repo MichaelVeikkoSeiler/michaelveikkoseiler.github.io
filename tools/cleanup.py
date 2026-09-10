@@ -11,7 +11,7 @@ import re
 import shutil
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SITE = os.path.abspath(os.path.join(HERE, "..", "site"))
+SITE = os.path.abspath(os.path.join(HERE, "..", "docs"))
 
 # Head-Elemente, die auf PHP-Endpunkte zeigen und statisch ins Leere laufen
 DEAD_TAGS = [

@@ -18,7 +18,7 @@ import urllib.parse
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SITE = os.path.abspath(os.path.join(HERE, "..", "site"))
+SITE = os.path.abspath(os.path.join(HERE, "..", "docs"))
 EXT = os.path.join(SITE, "_ext")
 
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "

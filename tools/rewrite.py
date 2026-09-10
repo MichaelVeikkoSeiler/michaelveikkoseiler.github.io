@@ -21,7 +21,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from mirror import norm, local_path, web_path, BASE_HOST, EXT_HOSTS  # noqa: E402
 
-SITE = os.path.abspath(os.path.join(HERE, "..", "site"))
+SITE = os.path.abspath(os.path.join(HERE, "..", "docs"))
 
 TEXT_EXT = {".html", ".htm", ".css", ".js", ".json", ".xml", ".svg", ".txt", ".webmanifest"}
 

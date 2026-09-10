@@ -4,7 +4,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-const ROOT = path.resolve(__dirname, "..", "site");
+const ROOT = path.resolve(__dirname, "..", "docs");
 const PORT = Number(process.env.PORT || 8765);
 
 const TYPES = {
