@@ -1,0 +1,22 @@
+# Cloudflare Pages – Caching und Sicherheits-Header
+# Format: Pfadmuster, darunter eingerückt die Header.
+
+# Schriften und externe Assets liegen unter versionierten Pfaden – dauerhaft cachebar
+/_ext/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Bilder und Videos: 30 Tage. Ein neues Bild bekommt einen neuen Dateinamen,
+# ein ersetztes ist nach spätestens 30 Tagen überall aktuell.
+/wp-content/uploads/*
+  Cache-Control: public, max-age=2592000
+
+# Theme-CSS/JS: 1 Tag, damit Anpassungen zeitnah ankommen
+/wp-content/themes/*
+  Cache-Control: public, max-age=86400
+/wp-includes/*
+  Cache-Control: public, max-age=86400
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN

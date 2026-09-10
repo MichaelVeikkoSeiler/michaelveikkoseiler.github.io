@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+._*
+
+# Node
+node_modules/
+
+# Zwischenergebnis des Spiegel-Vorgangs, wird bei Bedarf neu erzeugt
+tools/mirror-report.json

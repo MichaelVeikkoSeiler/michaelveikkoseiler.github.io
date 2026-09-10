@@ -1,0 +1,167 @@
+.cookie-bar-notification {
+    position: fixed;
+    background-color: #fff;
+    bottom: 0;
+    box-shadow: 0 7px 15px 4px #333;
+    -webkit-box-shadow: 0 7px 15px 4px #333;
+    -moz-box-shadow: 0 7px 15px 4px #333;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 40px;
+    padding: 15px;
+    z-index: 2147483000;
+    display: none;
+    /*opacity: 0.8;*/
+}
+
+.cookie-bar-notification p {margin:0;}
+
+.cookie-bar-notification.whole-width-top {
+    top: 0;
+    bottom: auto;
+}
+
+.cookie-bar-notification.top-left,
+.cookie-bar-notification.top-right {
+    top: 0;
+    bottom: auto;
+}
+
+.cookie-bar-notification .dsgvo-wrap {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.cookie-bar-notification-message {
+    float: left;
+    margin-bottom: 20px;
+}
+
+.cookie-bar-notification-message p {
+    margin-bottom: 0px;
+    line-height: 2.1;
+    font-size:15px;
+}
+
+.cookie-bar-notification-buttons {
+    float: right;
+    text-align: right;
+}
+
+.cookie-bar-notification-buttons a {
+    text-decoration: none;
+    font-size:15px;
+}
+
+.cookie-bar-notification-buttons a:hover {
+    text-decoration: underline;
+}
+
+.top-right .cookie-bar-notification-message,
+.top-right .cookie-bar-notification-buttons,
+.top-left .cookie-bar-notification-message,
+.top-left .cookie-bar-notification-buttons,
+.bottom-right .cookie-bar-notification-message,
+.bottom-right .cookie-bar-notification-buttons,
+.bottom-left .cookie-bar-notification-message,
+.bottom-left .cookie-bar-notification-buttons {
+    width: 100%;
+}
+
+.cookie-bar-notification-buttons a {
+    display: inline-block;
+    border-radius: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+@media only screen and (min-width: 320px) and (max-width:579px) {
+
+    .cookie-bar-notification-buttons {text-align:center;}
+
+}
+
+@media only screen and (min-width: 580px) {
+    .top-right .cookie-bar-notification-message,
+    .top-left .cookie-bar-notification-message,
+    .bottom-right .cookie-bar-notification-message,
+    .bottom-left .cookie-bar-notification-message {
+        float: left;
+        width: 75%;
+    }
+
+    .top-right .cookie-bar-notification-buttons,
+    .top-left .cookie-bar-notification-buttons,
+    .bottom-right .cookie-bar-notification-buttons,
+    .bottom-right .cookie-bar-notification-buttons {
+        float: left;
+        width: 22%;
+    }
+
+    .cookie-bar-notification-message {
+        margin-bottom: 0;
+        width: 60%;
+    }
+
+    .cookie-bar-notification-buttons {
+        float: left;
+        margin-left: 3%;
+        width: 37%;
+        text-align: right;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .cookie-bar-notification.top-right,
+    .cookie-bar-notification.top-left,
+    .cookie-bar-notification.bottom-right,
+    .cookie-bar-notification.bottom-left {
+        -webkit-box-shadow: -3px -1px 27px -7px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: -3px -1px 27px -7px rgba(0, 0, 0, 0.75);
+        box-shadow: -3px -1px 27px -7px rgba(0, 0, 0, 0.75);
+        width: 250px;
+        padding: 10px;
+    }
+
+    .cookie-bar-notification.top-left {
+        right: auto;
+        left: 30px;
+    }
+
+    .cookie-bar-notification.top-right {
+        right: 30px;
+        left: auto;
+    }
+
+    .cookie-bar-notification.bottom-left {
+        right: auto;
+        left: 30px;
+    }
+
+    .cookie-bar-notification.bottom-right {
+        right: 30px;
+        left: auto;
+    }
+
+    .top-right .cookie-bar-notification-message,
+    .top-left .cookie-bar-notification-message,
+    .bottom-right .cookie-bar-notification-message,
+    .bottom_left .cookie-bar-notification-message,
+    .top-right .cookie-bar-notification-buttons,
+    .top-left .cookie-bar-notification-buttons,
+    .bottom-right .cookie-bar-notification-buttons,
+    .bottom-left .cookie-bar-notification-buttons {
+        width: 100%;
+    }
+
+    .top-right .cookie-bar-notification-buttons,
+    .top-left .cookie-bar-notification-buttons,
+    .bottom-right .cookie-bar-notification-buttons,
+    .bottom-left .cookie-bar-notification-buttons {
+        margin-left: 0;
+    }
+
+}
