@@ -25,6 +25,7 @@ tools/           Skripte, mit denen der Nachbau erzeugt wurde
   cleanup.py     entfernt tote WordPress-Reste
   fix_fonts.py   trennt die beiden Google-Fonts-Stylesheets
   check.py       prüft, ob jede referenzierte Datei existiert
+  difftext.py    vergleicht den sichtbaren Text mit der alten Live-Seite
   serve.js       lokaler Vorschau-Server
 ```
 
@@ -98,9 +99,11 @@ GitHub selbst aus.
 
 ## Bekannte Punkte
 
-* **Mailadresse auf `/kontakt/`:** Der Link zeigt `veikko@gmx.ch` an, führt aber
-  auf `mailto:info@bildstudio.ch`. Das war schon auf der alten Seite so — zu
-  ändern in `docs/kontakt/index.html`.
+* **Abweichungen zur alten Seite (bewusst):** Mailadresse überall auf
+  `veikko@gmx.ch` gesetzt (die alte Seite verlinkte `info@bildstudio.ch`, zeigte
+  aber `veikko@gmx.ch` an), Copyright auf 2026 aktualisiert.
+* **Tippfehler auf `/portrait/`** (stammen aus der alten Seite, unverändert
+  übernommen): «Parter» statt «Partner», «Anfangs 2019» statt «Anfang 2019».
 * **Cookie-Banner:** Ist übernommen, obwohl die Seite gar kein Tracking
   einsetzt (kein Google Analytics, keine Pixel). Er könnte ersatzlos entfallen.
 * **Ladezeit:** Der Preloader wartet, bis alle Kopfbilder geladen sind — das
@@ -124,3 +127,9 @@ python3 tools/mirror.py && python3 tools/rewrite.py && python3 tools/cleanup.py 
 ```
 
 `check.py` meldet am Ende, ob alle internen Verweise auflösen.
+
+Danach `python3 tools/difftext.py` laufen lassen: Es vergleicht den sichtbaren
+Text jeder Seite mit dem der alten Live-Seite. `rewrite.py` trifft beim
+Umschreiben der URLs gelegentlich auch Text, der für Leser bestimmt ist — so
+wurde aus «Webseite: https://www.bildstudio.ch/» im Impressum einmal
+«Webseite: /index.html». Solche Treffer fallen sonst niemandem auf.
