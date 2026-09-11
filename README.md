@@ -77,25 +77,41 @@ GitHub Pages ist bei privaten Repositories kostenpflichtig.
 
 ### Eigene Domain
 
-Unter **Settings → Pages → Custom domain** `www.bildstudio.ch` eintragen. Dann
-beim Domain-Anbieter (aktuell cyon) die DNS-Einträge setzen:
+**Achtung, hier steckt eine Falle.** Der MX-Eintrag von bildstudio.ch zeigt nicht
+auf einen eigenen Mailserver-Namen, sondern auf die Domain selbst:
 
-| Typ | Name | Ziel |
-|---|---|---|
-| CNAME | `www` | `michaelveikkoseiler.github.io` |
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
+```
+MX   bildstudio.ch  ->  bildstudio.ch
+A    bildstudio.ch  ->  149.126.4.71   (cyon)
+```
 
-Anschliessend in GitHub **Enforce HTTPS** ankreuzen — das Zertifikat stellt
-GitHub selbst aus.
+Wer also den A-Eintrag der Hauptdomain auf die GitHub-IPs umbiegt, leitet damit
+auch die gesamte eingehende Post an GitHub um - und die ist dann verloren, nicht
+nur verzoegert. Die uebliche GitHub-Anleitung mit vier A-Eintraegen auf `@` ist
+fuer diese Domain daher **falsch**.
 
-> **Achtung Mail:** Der MX-Eintrag von bildstudio.ch zeigt auf denselben Server
-> wie die Website (cyon, 149.126.4.71). Wer die A-Einträge ändert, darf die
-> MX-Einträge nicht anfassen, sonst fällt `info@bildstudio.ch` aus. Und solange
-> das Postfach bei cyon liegt, kann das Hosting dort nicht vollständig gekündigt
-> werden.
+**Sicherer Weg (umgesetzt):** nur `www` umziehen, Hauptdomain bei cyon lassen.
+
+| Typ | Name | Ziel | |
+|---|---|---|---|
+| CNAME | `www` | `michaelveikkoseiler.github.io` | geaendert |
+| A | `@` | `149.126.4.71` | **unveraendert lassen** |
+| MX | `@` | `bildstudio.ch` | **unveraendert lassen** |
+| TXT | `@` | `v=spf1 ...` | **unveraendert lassen** |
+
+`bildstudio.ch` ohne www leitet weiterhin ueber cyon auf `www.bildstudio.ch`
+weiter und landet damit auf der neuen Seite. Beide Adressen funktionieren.
+
+Auf GitHub-Seite genuegt die Datei `docs/CNAME` mit dem Inhalt
+`www.bildstudio.ch` - GitHub Pages liest sie und stellt das Zertifikat selbst
+aus. Danach unter **Settings -> Pages** *Enforce HTTPS* ankreuzen, sobald die
+Option anwaehlbar wird (kann bis zu einer Stunde dauern).
+
+**Spaeter, wenn das Postfach geklaert ist:** Soll auch die Hauptdomain direkt zu
+GitHub, braucht der Mailversand vorher einen eigenen Hostnamen - etwa
+`mail.bildstudio.ch` mit A-Eintrag auf cyons IP und MX darauf zeigend. Diesen
+Hostnamen bei cyon erfragen statt raten. Erst danach duerfen die A-Eintraege
+von `@` auf die GitHub-IPs (185.199.108-111.153) wechseln.
 
 ## Bekannte Punkte
 
